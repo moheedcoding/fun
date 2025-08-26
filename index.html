@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fun Delay</title>
+    <title>Fun Mobile Freeze</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #message {
+            font-size: 24px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
-    <h1>Processing... Please Wait!</h1>
+    <div id="message">Processing... Your Phone is Thinking! 😜</div>
+    <canvas id="canvas"></canvas>
     <script>
-        // 3 seconds ke liye delay create karne ka code
-        let start = new Date().getTime();
-        let delay = 3000; // 3 seconds
-        while (new Date().getTime() - start < delay) {
-            // Ye loop browser ko temporarily busy rakhega
+        // Heavy animation to create a "busy" effect
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Simple animation to stress the browser
+        function heavyAnimation() {
+            for (let i = 0; i < 1000; i++) {
+                ctx.fillStyle = `hsl(${Math.random() * 360}, 50%, 50%)`;
+                ctx.fillRect(
+                    Math.random() * canvas.width,
+                    Math.random() * canvas.height,
+                    50, 50
+                );
+            }
         }
-        alert("Haha! Gotcha! 😜 Your phone was paused for 3 seconds!");
+
+        // Simulate heavy work for 3 seconds
+        function simulateFreeze() {
+            const start = Date.now();
+            const duration = 3000; // 3 seconds
+            while (Date.now() - start < duration) {
+                // Run heavy animation to make browser busy
+                heavyAnimation();
+            }
+            // After freeze, show fun message
+            document.getElementById('message').innerText = "Haha! Gotcha! 😜 Your phone was busy for 3 seconds!";
+            canvas.style.display = 'none'; // Hide canvas after freeze
+        }
+
+        // Start freeze effect on page load
+        simulateFreeze();
     </script>
 </body>
 </html>
