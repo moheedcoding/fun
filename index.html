@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun Delay</title>
+</head>
+<body>
+    <h1>Processing... Please Wait!</h1>
+    <script>
+        // 3 seconds ke liye delay create karne ka code
+        let start = new Date().getTime();
+        let delay = 3000; // 3 seconds
+        while (new Date().getTime() - start < delay) {
+            // Ye loop browser ko temporarily busy rakhega
+        }
+        alert("Haha! Gotcha! 😜 Your phone was paused for 3 seconds!");
+    </script>
+</body>
+</html>
