@@ -1,67 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fun Mobile Freeze</title>
+    <title>Prank Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #000;
+            color: red;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000;
-            color: white;
-            font-family: Arial, sans-serif;
+            font-family: monospace;
+            font-size: 30px;
             text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+            user-select: none; /* Prevent text selection */
+            -webkit-user-select: none; /* For iOS */
+            touch-action: none; /* Disable touch interactions */
         }
         #message {
-            font-size: 24px;
-        }
-        canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: -1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
     </style>
 </head>
 <body>
-    <div id="message">Processing... Your Phone is Thinking! 😜</div>
-    <canvas id="canvas"></canvas>
+    <div id="message">Phone Hacked! 😱 <br> Please Wait...</div>
     <script>
-        // Heavy animation to create a "busy" effect
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Prevent default touch and mouse events
+        document.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
+        document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+        document.addEventListener('mousedown', (e) => e.preventDefault(), { passive: false });
+        document.addEventListener('keydown', (e) => e.preventDefault(), { passive: false });
 
-        // Simple animation to stress the browser
-        function heavyAnimation() {
-            for (let i = 0; i < 1000; i++) {
-                ctx.fillStyle = `hsl(${Math.random() * 360}, 50%, 50%)`;
-                ctx.fillRect(
-                    Math.random() * canvas.width,
-                    Math.random() * canvas.height,
-                    50, 50
-                );
-            }
-        }
-
-        // Simulate heavy work for 3 seconds
-        function simulateFreeze() {
-            const start = Date.now();
-            const duration = 3000; // 3 seconds
-            while (Date.now() - start < duration) {
-                // Run heavy animation to make browser busy
-                heavyAnimation();
-            }
-            // After freeze, show fun message
-            document.getElementById('message').innerText = "Haha! Gotcha! 😜 Your phone was busy for 3 seconds!";
-            canvas.style.display = 'none'; // Hide canvas after freeze
-        }
-
-        // Start freeze effect on page load
-        simulateFreeze();
+        // Change message after 5 seconds
+        setTimeout(() => {
+            document.getElementById('message').innerHTML = "Haha! Just a Prank! 😜 <br> Your Phone is Fine!";
+            // Re-enable touch after prank
+            document.body.style.touchAction = 'auto';
+        }, 5000); // 5 seconds delay
     </script>
 </body>
 </html>
