@@ -1,82 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Prank Full Screen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: #000;
-            color: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: monospace;
-            font-size: 30px;
-            text-align: center;
-            overflow: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-        #message {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mujahid Special ❤️😂</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 15px;
+      animation: pop 1.5s infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); color: #ffea00; }
+      to { transform: scale(1.15); color: #ff4d4d; }
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin: 10px;
+      color: #ffe6e6;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    iframe, img {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 8px;
+    }
+
+    .download-btn {
+      display: block;
+      margin-top: 8px;
+      padding: 8px;
+      background: #ff4d4d;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #ff1a1a;
+    }
+
+    /* Special Button */
+    .special-btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      animation: pulseGlow 2s infinite, shake 4s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 5px #ff512f, 0 0 10px #dd2476; }
+      50% { box-shadow: 0 0 20px #ff512f, 0 0 30px #dd2476; }
+      100% { box-shadow: 0 0 5px #ff512f, 0 0 10px #dd2476; }
+    }
+
+    @keyframes shake {
+      0%, 90%, 100% { transform: translateX(0); }
+      92% { transform: translateX(-5px); }
+      94% { transform: translateX(5px); }
+      96% { transform: translateX(-5px); }
+      98% { transform: translateX(5px); }
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.5);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .card {
+        width: 280px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="message">Phone Hacked! 😱 <br> Please Wait...</div>
-    <script>
-        // Request full-screen mode
-        function goFullScreen() {
-            const elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { // iOS Safari
-                elem.webkitRequestFullscreen();
-            }
-        }
+  <h1>🎉 Mujahid Bhai Special Website 🎉</h1>
+  <p>😂 Dosti ka Unlimited Data Pack – Mujahid Only 😂</p>
 
-        // Prevent all user interactions
-        document.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
-        document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
-        document.addEventListener('mousedown', (e) => e.preventDefault(), { passive: false });
-        document.addEventListener('keydown', (e) => e.preventDefault(), { passive: false });
+  <!-- Special Button -->
+  <button class="special-btn" onclick="openModal()">👶 Bachpan ki Yaadein Dekho 👶</button>
 
-        // Prevent back navigation
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function () {
-            window.history.pushState(null, null, window.location.href);
-        };
+  <!-- Popup Modal -->
+  <div id="photoModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img src="mujahid and moheed.jpg" alt="Mujahid and Moheed Childhood Photo">
+  </div>
 
-        // Start full-screen and prank
-        goFullScreen();
+  <div class="container">
+    <!-- 12 Videos -->
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19F7qtkhSfrY-6uopWzX9C4wPYQeYnYTo/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19F7qtkhSfrY-6uopWzX9C4wPYQeYnYTo" class="download-btn">⬇ Download Video 1</a>
+    </div>
 
-        // Change message after 5 seconds
-        setTimeout(() => {
-            document.getElementById('message').innerHTML = "Haha! Just a Prank! 😜 <br> Your Phone is Fine!";
-            document.body.style.touchAction = 'auto';
-            // Exit full-screen
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            }
-        }, 5000); // 5 seconds
-    </script>
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19h-q78WcwBNMjQGIigS8GxzXes76OVf_/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19h-q78WcwBNMjQGIigS8GxzXes76OVf_" class="download-btn">⬇ Download Video 2</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19X_3MnF7B3YUktHFtmg6NqxKqINdqgSz/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19X_3MnF7B3YUktHFtmg6NqxKqINdqgSz" class="download-btn">⬇ Download Video 3</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19VWnMxrAsVlvou6bj2sR8p7lRKh5Jy8n/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19VWnMxrAsVlvou6bj2sR8p7lRKh5Jy8n" class="download-btn">⬇ Download Video 4</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19SL3NUeGoS7Fwg_xuTkeq8x0NHwvWF8f/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19SL3NUeGoS7Fwg_xuTkeq8x0NHwvWF8f" class="download-btn">⬇ Download Video 5</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19MiVx1iuc-HJmmwNmodLPjpNQR9FEYDa/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19MiVx1iuc-HJmmwNmodLPjpNQR9FEYDa" class="download-btn">⬇ Download Video 6</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19sgBGIkC0NP3ocEPLxmOcjubhfPMuJTF/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19sgBGIkC0NP3ocEPLxmOcjubhfPMuJTF" class="download-btn">⬇ Download Video 7</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19K_06nYWF-CCzwlXOZ9hT_GAfmvKYUCE/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19K_06nYWF-CCzwlXOZ9hT_GAfmvKYUCE" class="download-btn">⬇ Download Video 8</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19GnDuF2NSWrJqs4vqYX9ycYZMOC1Qfuk/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19GnDuF2NSWrJqs4vqYX9ycYZMOC1Qfuk" class="download-btn">⬇ Download Video 9</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/1A1wxDXrNBUYdcU54S3K2rTuFSyqjV6fL/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=1A1wxDXrNBUYdcU54S3K2rTuFSyqjV6fL" class="download-btn">⬇ Download Video 10</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/1A2T_FT_3vgt1KB0PE2Q2XHQ3APh1tA3n/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=1A2T_FT_3vgt1KB0PE2Q2XHQ3APh1tA3n" class="download-btn">⬇ Download Video 11</a>
+    </div>
+
+    <div class="card">
+      <iframe src="https://drive.google.com/file/d/19pp2_t-pvTSTeqeLZbfA-IyN2R-u1mVa/preview" allow="autoplay"></iframe>
+      <a href="https://drive.google.com/uc?export=download&id=19pp2_t-pvTSTeqeLZbfA-IyN2R-u1mVa" class="download-btn">⬇ Download Video 12</a>
+    </div>
+
+    <!-- Images -->
+    <div class="card">
+      <img src="photo1.jpg" alt="Photo 1">
+      <a href="photo1.jpg" download class="download-btn">⬇ Download Photo 1</a>
+    </div>
+    <div class="card">
+      <img src="photo2.jpg" alt="Photo 2">
+      <a href="photo2.jpg" download class="download-btn">⬇ Download Photo 2</a>
+    </div>
+  </div>
+
+  <footer>
+    🤝 Dedicated to Mujahid – Dosti Level: Unlimited 😂  
+  </footer>
+
+  <script>
+    function openModal() {
+      document.getElementById("photoModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("photoModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
